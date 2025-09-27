@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Visionblend — Search</title>
+  <link rel="stylesheet" href="stylee.css" />
+</head>
+<body>
+  <header class="site-header" role="banner">
+    <a class="logo" href="#" aria-label="Visionblend home">
+      <span class="logo-badge" aria-hidden="true">
+        <img src="logo.png" alt="Visionblend logo">
+      </span>
+      <div>
+        <div class="brand">VisionBlend</div>
+        <div class="tag">Design · UI · Motion</div>
+      </div>
+    </a>
+
+    <nav role="navigation" aria-label="Primary">
+      <a href="#">Home</a>
+      <a href="#">About</a>
+      <a href="mailto:test@visionblend@gmail.com" 
+      title="Send us an Email"
+      >Contact Us</a>
+    </nav>
+
+    <button class="hamburger" aria-label="Open menu" onclick="toggleMobileNav()">
+      <svg width="22" height="16" viewBox="0 0 22 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="22" height="2" rx="1" fill="currentColor"></rect>
+        <rect y="7" width="22" height="2" rx="1" fill="currentColor"></rect>
+        <rect y="14" width="22" height="2" rx="1" fill="currentColor"></rect>
+      </svg>
+    </button>
+  </header>
+
+  <div class="mobile-nav" id="mobileNav" aria-hidden="true">
+    <a href="#">Home</a>
+    <a href="#">About</a>
+    <a href="#">Contact Us</a>
+  </div>
+
+  <div class="accent-line" aria-hidden="true"></div>
+
+<div class="split-container">
+ 
+  <div class="split left">
+  <div class="search-box">
+    <h1 class="display-4 mb-4">Search Images</h1>
+    
+<form onsubmit="getImages(event)" class="mb-5">
+  <div class="w-75 mx-auto mb-3">
+    
+  </div>
+  <div class="w-75 mx-auto">
+    <button class="btn btn-light w-100">
+      <i class="bi bi-search me-2"></i> 
+      <a href ="http://127.0.0.1:5500/pixabay_image_search-main/index.html" 
+      target="_blank"
+      title="Goes to Search Images Page"
+      > Search Images</a>
+    
+  </div>
+</form>
+<div class="container">
+  <div class="row" id="imagesresult"></div>
+</div>
+
+  </div>
+</div>
+<div class="split-divider"></div> 
+ <div class="split right">
+  <video autoplay muted loop playsinline class="bg-video">
+    <source src="Bugatti.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
+  <div class="search-box">
+    <h1 class="display-4 mb-4">Search Videos</h1>
+ 
+<form onsubmit="getVideos(event)" class="mb-5">
+  <div class="w-75 mx-auto mb-3">
+   
+  </div>
+  <div class="w-75 mx-auto">
+    <button class="btn btn-light w-100">
+      <i class="bi bi-search me-2"></i> 
+    <a href ="http://127.0.0.1:5500/Pixabay_video_search-main/index.html" 
+    target="_blank"
+     title="Goes to Search Videos Page"
+    > Search Videos</a>
+    
+    </button>
+  </div>
+</form>
+<div class="container">
+  <div class="row" id="videosresult"></div>
+</div>
+
+  </div>
+</div>
+
+  <script src="assets/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    function toggleMobileNav(){
+      const el = document.getElementById('mobileNav');
+      const isOpen = el.style.display === 'flex';
+      el.style.display = isOpen ? 'none' : 'flex';
+      el.setAttribute('aria-hidden', String(isOpen));
+    }
+  </script>
+   
+ 
+</body>
+</html>
